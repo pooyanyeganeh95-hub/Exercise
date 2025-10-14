@@ -1,32 +1,12 @@
-*{
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-}
-
-
 /* custom property */
 :root {
 	--accent-color: #800000;  /* could also be coded #800 */
-	--main-bg-color: aliceblue;
-    --border-color: rebeccapurple;
-}
-html {
-	background-color: var(--main-bg-color);
-}
-
-img {
-    float: left;
-    margin: 0 15px 15px 0;
 }
 
 /* default styles */
 body {
 	font-family: Arial, Helvetica, sans-serif;
     font-size: 100%;
-	width: 90%;
-	margin: 0 auto;
-	border: 5px double var(--border-color);
 }
 a:hover, a:focus{
 	font-style: italic;
@@ -34,39 +14,13 @@ a:hover, a:focus{
 }
 h1 {
 	font-size: 150%;
-	color: var(--border-color);
-	margin: 20px 0;
 }
 h2 {
-	font-size: 125%;
-	margin: 18px 0;
+	font-size: 130%;
 	color: var(--accent-color);
 }
 h3 {
-	font-size: 115%;
-	margin: 16px 0;
-	clear: both;
-
-}
-p {
-    margin: 10px 0;
-    line-height: 1.5;
-}
-
-blockquote {
-    margin: 15px 20px;
-    padding: 10px 15px;
-    border-left: 3px solid var(--border-color);
-    background-color: #f4f4f4;
-}
-
-ul {
-    margin: 10px 0 10px 20px;
-    padding: 0;
-}
-
-li {
-    margin: 5px 0;
+	font-size: 105%;
 }
 
 /* the styles for the header */
@@ -88,24 +42,15 @@ header {
 /* the styles for the main content */
 main {
 	clear: left;
-	padding: 20px;
 }
 
 /* the styles for the footer */
 footer {
-	border-top: 5px solid var(--border-color);
 	& p {
 		text-align: center;
-		font-size: 90%;
-    font-weight: bold;
-    margin: 10px 0;
 	}
 }
-cite {
-    color: var(--border-color);
-    font-style: normal;
-    font-weight: bold;
-}
+
 /* CSS class */
 .large {
 	font-size: 125%;
