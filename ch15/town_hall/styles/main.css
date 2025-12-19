@@ -1,6 +1,6 @@
 /* custom property */
 :root {
-	--accent-color: #800000;  /* could also be coded #800 */
+	--accent-color: #800000;
 	--gradient-color: #f6bb73;
 
 	--light_menu: white;
@@ -18,118 +18,113 @@
 /* default styles */
 body {
 	font-family: Arial, Helvetica, sans-serif;
-    font-size: calc(15px + .2vw);
+	font-size: calc(15px + .2vw);
 	width: min(80%, 1024px);
 	line-height: 1.5;
 	margin: auto;
 	border: 2px solid var(--accent-color);
 }
+
 h1, h2, h3, p, ul {
 	padding: .25em 0;
 }
-a:hover, a:focus{
+
+a:hover, a:focus {
 	font-style: italic;
 	color: var(--accent-color);
 }
-h1 {
-	font-size: 150%;
-}
-h2 {
-	font-size: 130%;
-	color: var(--accent-color);
-}
-h3 {
-	font-size: 105%;
-}
-ul {
-	margin-left: 2em;
-}
 
-/* the styles for the header */
+h1 { font-size: 150%; }
+h2 { font-size: 130%; color: var(--accent-color); }
+h3 { font-size: 105%; }
+
+ul { margin-left: 2em; }
+
+/* header */
 header {
 	text-align: center;
 	line-height: 1.2;
 	border-bottom: 2px solid var(--accent-color);
 	background-image: linear-gradient(
-	    30deg, var(--gradient-color) 0%, white 30%, white 65%, var(--gradient-color) 100%);
-	& h2 {
-		font-size: 175%;
-		padding: .5em 0 0 0;
-	}
-	& h3 {
-		font-size: 130%;
-		font-style: italic;
-		padding-bottom: 1em;
-	}
-	& img {
-		display: none;
-	}
+		30deg, var(--gradient-color) 0%, white 30%, white 65%, var(--gradient-color) 100%
+	);
 }
 
-/* the styles for the main content */
+header h2 {
+	font-size: 175%;
+	padding-top: .5em;
+}
+
+header h3 {
+	font-size: 130%;
+	font-style: italic;
+	padding-bottom: 1em;
+}
+
+header img {
+	display: none;
+}
+
+/* main layout */
 main {
 	display: flex;
 	flex-direction: column-reverse;
 	padding: 0 1em 1em;
-	& blockquote {
-		font-style: italic;
-		padding-left: 1em;
-	}
-	& h3 + img { /* speaker images */
-		width: clamp(40px, 50%, 75px);
-		border: 4px double var(--accent-color);
-		border-radius: 10px;
-	}
 }
 
-/* the styles for the section */
+main blockquote {
+	font-style: italic;
+	padding-left: 1em;
+}
+
+main h3 + img {
+	width: clamp(40px, 50%, 75px);
+	border: 4px double var(--accent-color);
+	border-radius: 10px;
+}
+
+/* section */
 section {
 	padding-left: .5em;
 	border-bottom: 8px double var(--accent-color);
-	& img {
-		width: clamp(100px, 50%, 250px);
-		float: right;
-		margin: 0 1em .25em;
-	}
 }
 
-/* the styles for the aside */
+section img {
+	width: clamp(100px, 50%, 250px);
+	float: right;
+	margin: 0 1em .25em;
+}
+
+/* aside */
 aside {
 	padding-right: .5em;
 }
 
-/* the styles for the footer */
+/* footer */
 footer {
 	background-color: var(--accent-color);
-	& p {
-		text-align: center;
-		color: white;
-		padding: 1em 0;
-	}
 }
 
-/* CSS class */
+footer p {
+	text-align: center;
+	color: white;
+	padding: 1em 0;
+}
+
+/* classes */
 .featured {
 	border-top: 2px solid var(--accent-color);
 	border-bottom: 2px solid var(--accent-color);
 	padding: .5em 0 1em;
 }
-.speaker {
-	& h1 {
-		color: var(--accent-color);
-	}
-	& h2 {
-		color: black;
-	}
-	& p {
-		padding: .5em 0; 
-	}	
-}
-.large {
-	font-size: 125%;
-}
 
-/* styles for the menu */
+.speaker h1 { color: var(--accent-color); }
+.speaker h2 { color: black; }
+.speaker p { padding: .5em 0; }
+
+.large { font-size: 125%; }
+
+/* menu */
 .menu {
 	position: absolute;
 	left: 0;
@@ -142,80 +137,135 @@ footer {
 	clear: left;
 	position: relative;
 	background-color: var(--accent-color);
-	& a {
-		display: block;
-		padding: 1em;
-		text-decoration: none;
-		margin: 0 2px 2px 0;
-	}
-	& a:link, a:visited { 
-		color: var(--light_menu);
-	}
-	& a:hover, a:focus, a.current {
-		background-color: var(--mid_menu);
-		color: var(--dark_menu);
-	}
-	& ul {
-		list-style-type: none;
-		padding: 0;
-		margin: 0;
-	}
 }
 
-.menu-btn {                                
-    display: block;
-    padding: 1em;
-    color: var(--light_menu); 
-}
-.menu-btn::after { 
-    content: "\2630";                    /* hamburger symbol */
+.navbar a {
+	display: block;
+	padding: 1em;
+	text-decoration: none;
+	margin: 0 2px 2px 0;
 }
 
-#checkbox-toggle { display: none; }      /* checkbox is always hidden */
-
-/* when checkbox is checked, show menu and change icon */
-#checkbox-toggle:checked ~ .menu { 
-    display: block; 
+.navbar a:link,
+.navbar a:visited {
+	color: var(--light_menu);
 }
+
+.navbar a:hover,
+.navbar a:focus,
+.navbar a.current {
+	background-color: var(--mid_menu);
+	color: var(--dark_menu);
+}
+
+.navbar ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+
+.menu-btn {
+	display: block;
+	padding: 1em;
+	color: var(--light_menu);
+}
+
+.menu-btn::after {
+	content: "\2630";
+}
+
+#checkbox-toggle { display: none; }
+
+#checkbox-toggle:checked ~ .menu {
+	display: block;
+}
+
 #checkbox-toggle:checked ~ .menu-btn::after {
-    content: "\2716";                    /* close (X) symbol */
+	content: "\2716";
 }
 
 .menu li:has(.submenu) {
 	position: relative;
-	& small::after { content: "\25b6"; }  /* right triangle */
-	& small { margin-left: .25em; }
-	&:hover > .submenu {
-		display: block;
-	}
+}
+
+.menu li:has(.submenu) small::after {
+	content: "\25b6";
+	margin-left: .25em;
+}
+
+.menu li:hover > .submenu {
+	display: block;
 }
 
 .submenu {
 	position: absolute;
-	top:0;
+	top: 0;
 	left: 100%;
 	width: 100%;
 	background-color: var(--accent-color);
-	color: var(--light_menu);
 	display: none;
-	& > li a { margin: 2px; }
 }
 
+.submenu > li a {
+	margin: 2px;
+}
+
+/* ===============================
+   TRANSITIONS & TRANSFORMS (ASIDE)
+   =============================== */
+
+aside img {
+	transition: transform 2s;
+	transform-origin: right center;
+}
+
+aside img:hover {
+	transform: translateX(30px) rotate(180deg);
+}
+
+/* ===============================
+   ANIMATION (SPEAKER IMAGE)
+   =============================== */
+
+@keyframes pulse {
+	0% {
+		filter: brightness(100%);
+		transform: scale(1);
+	}
+	50% {
+		filter: brightness(125%);
+		transform: scale(1.1);
+	}
+	100% {
+		filter: brightness(100%);
+		transform: scale(1);
+	}
+}
+
+.speaker article img {
+	animation: pulse 2s ease-in-out infinite alternate;
+}
+
+/* ===============================
+   REDUCED MOTION
+   =============================== */
+
+@media (prefers-reduced-motion: reduce) {
+	aside img {
+		transition: none;
+		transform: none;
+	}
+
+	.speaker article img {
+		animation: none;
+	}
+}
 
 /* media queries */
 @media only screen and (min-width: 922px) {
-	main {
-		flex-direction: row;
-	}
-	
-	section {
-		flex-basis: 75%;
-		border-bottom: none;
-	}
-	
-	aside {
-		flex-basis: 25%;
-	}
+	main { flex-direction: row; }
+	section { flex-basis: 75%; border-bottom: none; }
+	aside { flex-basis: 25%; }
 }
 
 @media only screen and (min-width: 786px) {
@@ -223,45 +273,39 @@ footer {
 		display: flex;
 		position: relative;
 		width: 100%;
-		& li { 
-			flex-basis: 20%; 
-			text-align: center;
-		}
 	}
-	
+
+	.menu li {
+		flex-basis: 20%;
+		text-align: center;
+	}
+
 	.menu-btn { display: none; }
 
-	#checkbox-toggle:checked ~ .menu { display: flex; }
-
-	.menu li:has(.submenu) {
-		& small::after { content: "\25bc"; }  /* down triangle */
+	.menu li:has(.submenu) small::after {
+		content: "\25bc";
 	}
-	
+
 	.submenu {
 		top: auto;
 		left: 0;
 		right: 0;
-		& > li a { margin: 0 2px 2px; }
 	}
 
-	.navbar {
-		& a {
-			margin: 0 1px 2px;
-		}
+	.navbar a {
+		margin: 0 1px 2px;
 	}
-
-	.menu > li:first-child a { margin-left: 0; }
-	.menu > li:last-child a { margin-right: 0; }
 }
 
 @media only screen and (min-width: 658px) {
 	header {
 		text-align: left;
-		& img {
-			display: block;
-			width: clamp(40px, 15%, 80px);
-			float: left;
-			margin: .75em 1em;
-		}
+	}
+
+	header img {
+		display: block;
+		width: clamp(40px, 15%, 80px);
+		float: left;
+		margin: .75em 1em;
 	}
 }
