@@ -2,29 +2,43 @@
     margin: 0;
     padding-bottom: 1em;
 }
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     font-size: 90%;
     width: min(90%, 800px);
     margin: 1em auto;
 }
+
+/* default h2 */
 h2 {
     font-size: 150%;
 }
+
+/* spacing */
 ul, li, h2 {
     padding-bottom: .5em;
 }
+
 img {
     width: min(100%, 750px);
 }
+
+/* footer heading */
 footer h2 {
     text-align: center;
     font-size: 90%;
 }
 
+/* =========================
+   SMALL SCREENS FIX
+   ========================= */
 @media screen and (max-width: 600px) {
-    h2 {
+
+    /* apply only to h2 that are NOT in footer */
+    h2:not(footer h2) {
         font-size: 120%;
         text-align: left;
     }
+
 }
